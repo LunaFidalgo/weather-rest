@@ -1,0 +1,19 @@
+{
+  "name": "weather-rest",
+  "version": "1.0.0",
+  "description": "Weather API rest",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint && jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ervitis/weather-rest.git"
+  },
+  "author": "ervitis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ervitis/weather-rest/issues"
+  },
+  "homepage": "https://github.com/ervitis/weather-rest#readme"
+}
