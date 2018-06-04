@@ -8,7 +8,7 @@ module.exports = {
     '!src/start.js'
   ],
   coverageReporters: [
-    'lcov', 'text', 'text-summary'
+    'jest-junit', 'lcov', 'text', 'text-summary'
   ],
   testEnvironment: 'node',
   verbose: true

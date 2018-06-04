@@ -23,12 +23,14 @@ jobs:
           command: npm run test-ci
       - run: 
           name: code-coverage
-          command: './node_modules/.bin/nyc report --reporter=text-lcov'
+          command: npm run coverage
+          environment:
+            JEST_JUNIT_OUTPUT: "junit.xml"
       - store_artifacts: 
-          path: test-results.xml
+          path: junit.xml
           prefix: tests
       - store_artifacts:
           path: coverage
           prefix: coverage
       - store_test_results: 
-          path: test-results.xml
+          path: junit.xml
