@@ -32,5 +32,4 @@ describe('Logger', () => {
     logger.stream.write('test')
     expect(logger.info).toHaveBeenCalledWith('test')
   })
-
 })

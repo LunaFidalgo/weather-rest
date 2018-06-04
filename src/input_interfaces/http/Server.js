@@ -8,7 +8,7 @@ const onHealthCheck = () => {
 }
 
 class Server {
-  constructor ({config, logger, router }) {
+  constructor ({ config, logger, router }) {
     this.config = config
     this.logger = logger
 

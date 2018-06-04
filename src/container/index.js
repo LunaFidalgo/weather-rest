@@ -1,4 +1,4 @@
-const { createContainer } = require('awilix')
+const { Lifetime, createContainer, asValue } = require('awilix')
 const { scopePerRequest } = require('awilix-express')
 const config = require('config')
 

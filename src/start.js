@@ -9,6 +9,6 @@ app
     app.stop()
   })
   .catch((err) => {
-    app.logger.error(error.stack)
+    app.logger.error(err.stack)
     process.exit()
   })

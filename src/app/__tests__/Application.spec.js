@@ -20,7 +20,7 @@ describe('Application', () => {
     }
 
     const logger = {}
-    const app = new Application({ config, server, logger, })
+    const app = new Application({ config, server, logger })
     await app.start()
     await app.stop()
     expect(server.stop).toHaveBeenCalled()
