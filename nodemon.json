@@ -1,0 +1,13 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules",
+    "deploy"
+  ],
+  "watch": [
+    "src",
+    "config",
+    "*json"
+  ],
+  "verbose": false
+}

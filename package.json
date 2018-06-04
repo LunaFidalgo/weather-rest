@@ -2,9 +2,9 @@
   "name": "weather-rest",
   "version": "1.0.0",
   "description": "Weather API rest",
-  "main": "index.js",
   "scripts": {
-    "test": "eslint && jest --coverage"
+    "test": "eslint && jest --coverage",
+    "start": "node src/start.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,17 @@
   },
   "homepage": "https://github.com/ervitis/weather-rest#readme",
   "dependencies": {
+    "@godaddy/terminus": "2.2.0",
+    "http-errors": "1.6.3",
+    "http-status": "1.1.0",
+    "lodash": "4.17.10",
+    "morgan": "1.9.0",
+    "winston": "2.4.2",
     "awilix": "3.0.8",
     "awilix-express": "1.1.0",
     "body-parser": "1.18.3",
     "config": "1.30.0",
+    "cors": "2.8.4",
     "express": "4.16.3",
     "request": "2.87.0",
     "request-promise": "4.2.2"

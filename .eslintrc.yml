@@ -1,0 +1,21 @@
+extends:
+  - eslint:recommended
+  - standard
+
+plugins:
+  - standard
+
+env:
+  es6: true
+  node: true
+  jest: true
+
+rules:
+  no-var: 2
+  prefer-const: 2
+  no-else-return: "error"
+  quote-props: ["error", "consistent-as-needed"]
+  callback-return: ["error", ["done", "cb", "next", "callback"]]
+  no-useless-concat: "error"
+  prefer-template: "error"
+  no-process-env: "error"

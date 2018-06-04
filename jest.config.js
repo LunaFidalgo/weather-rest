@@ -1,15 +1,15 @@
 module.exports = {
-  "roots": [
-    "<rootDir>/src"
+  testMatch: [
+    '<rootDir>/**/*.spec.js'
   ],
-  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.jsx?$",
-  "modulePathIgnorePatterns": [
-    "/__mocks__/.*"
+  collectCoverageFrom: [
+    'src/**/*.js',
+    '!src/container/**',
+    '!src/start.js'
   ],
-  "moduleFileExtensions": [
-    "js",
-    "jsx",
-    "json",
-    "node"
-  ]
+  coverageReporters: [
+    'lcov', 'text', 'text-summary'
+  ],
+  testEnvironment: 'node',
+  verbose: true
 }
