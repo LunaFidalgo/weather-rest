@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Weather API rest",
   "scripts": {
-    "test": "eslint && jest --coverage",
+    "test-ci": "NODE_ENV=test npm run lint && npm run coverage && jest --ci --silent --verbose=false",
+    "coverage": "jest --coverage",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix",
     "start": "node src/start.js"
   },
   "repository": {
