@@ -9,7 +9,6 @@ module.exports = {
   },
   weather: {
     apiEndpoint: '<ENV>',
-    apiKey: '<ENV>',
-
+    apiKey: '<ENV>'
   }
 }

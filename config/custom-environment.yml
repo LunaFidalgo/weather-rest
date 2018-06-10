@@ -8,4 +8,4 @@ logger:
 
 weather:
   apiKey: API_KEY
-  endpoint: api.openweathermap.org
+  endpoint: API_ENDPOINT
