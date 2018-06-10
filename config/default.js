@@ -1,10 +1,15 @@
 module.exports = {
   server: {
-    port: 5000,
-    timeout: 10000
+    port: '<ENV>',
+    timeout: '<ENV>'
   },
   logger: {
-    level: 'info',
-    format: 'json'
+    level: '<ENV>',
+    format: '<ENV>'
+  },
+  weather: {
+    apiEndpoint: '<ENV>',
+    apiKey: '<ENV>',
+
   }
 }

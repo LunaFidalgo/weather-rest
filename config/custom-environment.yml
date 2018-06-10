@@ -1,0 +1,11 @@
+server:
+  port: PORT
+  timeout: 10000
+
+logger:
+  level: LEVEL
+  format: FORMAT
+
+weather:
+  apiKey: API_KEY
+  endpoint: api.openweathermap.org
