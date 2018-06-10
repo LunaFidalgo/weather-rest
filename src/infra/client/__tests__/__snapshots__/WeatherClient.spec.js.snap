@@ -1,3 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Api weather client Construct url 1`] = `"local=whatismykey"`;
+exports[`Api weather client Construct url 1`] = `"http://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=12345"`;
+
+exports[`Api weather client Get weather 1`] = `
+Object {
+  "base": "stations",
+  "clouds": Object {
+    "all": 20,
+  },
+  "cod": 200,
+  "coord": Object {
+    "lat": 40.42,
+    "lon": -3.7,
+  },
+  "dt": 1528660800,
+  "id": 3117735,
+  "main": Object {
+    "humidity": 72,
+    "pressure": 1013,
+    "temp": 290.43,
+    "temp_max": 291.15,
+    "temp_min": 289.15,
+  },
+  "name": "Madrid",
+  "sys": Object {
+    "country": "ES",
+    "id": 5505,
+    "message": 0.0022,
+    "sunrise": 1528605850,
+    "sunset": 1528659891,
+    "type": 1,
+  },
+  "visibility": 10000,
+  "weather": Array [
+    Object {
+      "description": "few clouds",
+      "icon": "02n",
+      "id": 801,
+      "main": "Clouds",
+    },
+  ],
+  "wind": Object {
+    "deg": 240,
+    "speed": 4.1,
+  },
+}
+`;

@@ -1,5 +1,6 @@
 const WeatherClient = require('../WeatherClient')
 const nock = require('nock')
+const mock = require('./__mocks__/mock_data')
 
 describe('Api weather client', () => {
   const logger = {
@@ -7,8 +8,8 @@ describe('Api weather client', () => {
   }
   const config = {
     weather: {
-      apiEndpoint: 'local=',
-      apiKey: 'whatismykey'
+      apiEndpoint: 'api.openweathermap.org/data/2.5/weather?q=Madrid&appid=',
+      apiKey: '12345'
     }
   }
 
@@ -24,9 +25,21 @@ describe('Api weather client', () => {
     expect(weatherClient._url()).toMatchSnapshot()
   })
 
-  test('Get weather', async () =>{
+  test('Get weather', async () => {
     const weatherClient = new WeatherClient({ logger, config })
 
+    nock(`http://api.openweathermap.org`)
+      .get('/data/2.5/weather')
+      .query({
+        q: 'Madrid',
+        appid: '12345'
+      })
+      .reply(200, mock.mockResponseMadrid())
+    nock.disableNetConnect()
 
+    const resp = await weatherClient.getWeather()
+    nock.enableNetConnect()
+
+    expect(resp).toMatchSnapshot()
   })
 })

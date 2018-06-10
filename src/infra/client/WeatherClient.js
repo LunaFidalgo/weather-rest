@@ -1,4 +1,5 @@
 const { RESOLVER, Lifetime } = require('awilix')
+const rp = require('request-promise')
 
 class WeatherClient {
   constructor ({ logger, config }) {
@@ -8,13 +9,21 @@ class WeatherClient {
 
   _url () {
     const { apiEndpoint, apiKey } = this.config.weather
-    const url = `${apiEndpoint}${apiKey}`
+    const url = `http://${apiEndpoint}${apiKey}`
 
     this.logger.info(`Get info from ${apiEndpoint}`)
     return url
   }
 
-
+  async getWeather () {
+    this.logger.info('Getting weather info')
+    const resp = await rp({
+      uri: this._url(),
+      json: true,
+      method: 'GET'
+    })
+    return resp
+  }
 }
 
 module.exports = WeatherClient
