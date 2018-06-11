@@ -1,0 +1,7 @@
+*.yml
+*.md
+nodemon.json
+.git*
+coverage
+node_modules
+.editorconfig
