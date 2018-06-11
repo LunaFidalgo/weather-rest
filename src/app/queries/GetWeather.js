@@ -13,7 +13,7 @@ class GetWeather extends Operation {
     const { SUCCESS, ERROR } = this.outputs
 
     try {
-      const data = await this.repo.getInfoWeather()
+      const data = await this.repo.getWeatherInfo()
       this.emit(SUCCESS, data)
     } catch (err) {
       this.emit(ERROR, err)
@@ -26,6 +26,6 @@ GetWeather.setOutputs(['SUCCESS', 'ERROR'])
 module.exports = GetWeather
 
 module.exports[RESOLVER] = {
-  name: 'getWeather',
+  name: 'getWeatherAction',
   lifetime: Lifetime.SCOPED
 }

@@ -6,9 +6,9 @@ app
   .start()
   .then(() => {
     app.logger.info(`Service ${app.config.serviceName} started`)
-    app.stop()
   })
   .catch((err) => {
+    app.stop()
     app.logger.error(err.stack)
     process.exit()
   })

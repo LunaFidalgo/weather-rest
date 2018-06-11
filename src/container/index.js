@@ -7,8 +7,11 @@ const container = createContainer()
 container
   .loadModules([
     'app/Application.js',
+    'app/queries/GetWeather.js',
 
     'infra/logging/Logger.js',
+    'infra/client/WeatherClient.js',
+    'infra/repositories/WeatherRepository.js',
 
     'input_interfaces/http/router.js',
     'input_interfaces/http/Server.js',
@@ -16,7 +19,6 @@ container
     'input_interfaces/http/middleware/ErrorHandler.js',
     'input_interfaces/http/middleware/ErrorMiddleware.js',
     'input_interfaces/http/middleware/logger.js'
-
   ], {
     resolverOptions: {
       lifetime: Lifetime.SINGLETON

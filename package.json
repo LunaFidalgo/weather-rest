@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Weather API rest",
   "scripts": {
+    "local": "nodemon --inspect src/start.js",
     "test-ci": "NODE_ENV=test npm run lint && npm run coverage && jest --ci --silent --verbose=false",
     "coverage": "jest --coverage",
     "lint": "eslint src",

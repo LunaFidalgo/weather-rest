@@ -1,9 +1,8 @@
 const { RESOLVER, Lifetime } = require('awilix')
 
 class WeatherRepository {
-  constructor ({ weatherClient, config }) {
+  constructor ({ weatherClient }) {
     this.weatherClient = weatherClient
-    this.config = config
   }
 
   async getWeatherInfo () {

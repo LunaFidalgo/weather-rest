@@ -6,11 +6,11 @@ describe('Get weather', () => {
   }
   const config = {}
 
-  let getInfoWeather, weatherRepository
+  let getWeatherInfo, weatherRepository
 
   beforeEach(() => {
     weatherRepository = {
-      getInfoWeather () {
+      getWeatherInfo () {
         return {
           temperature: 35.0,
           lat: 34.567,
@@ -19,7 +19,7 @@ describe('Get weather', () => {
       }
     }
 
-    getInfoWeather = new GetWeather({
+    getWeatherInfo = new GetWeather({
       weatherRepository: weatherRepository
     })
   })
@@ -37,23 +37,23 @@ describe('Get weather', () => {
 
   test('Emit success', async () => {
     const spySuccess = jest.fn()
-    getInfoWeather.on('SUCCESS', spySuccess)
-    await getInfoWeather.execute()
+    getWeatherInfo.on('SUCCESS', spySuccess)
+    await getWeatherInfo.execute()
     expect(spySuccess).toHaveBeenCalled()
   })
 
   test('emit error', async () => {
     const err = new Error('Something wrong')
-    getInfoWeather = new GetWeather({
+    getWeatherInfo = new GetWeather({
       weatherRepository: {
-        getInfoWeather: () => {
+        getWeatherInfo: () => {
           throw new Error('Something wrong')
         }
       }
     })
     const spy = jest.fn()
-    getInfoWeather.on('ERROR', spy)
-    await getInfoWeather.execute()
+    getWeatherInfo.on('ERROR', spy)
+    await getWeatherInfo.execute()
     expect(spy).toHaveBeenCalledWith(err)
   })
 })

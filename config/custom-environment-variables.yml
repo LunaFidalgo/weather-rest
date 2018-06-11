@@ -1,0 +1,3 @@
+weather:
+  apiEndpoint: API_ENDPOINT
+  apiKey: API_KEY

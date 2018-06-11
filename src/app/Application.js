@@ -1,7 +1,7 @@
 const { Lifetime, RESOLVER } = require('awilix')
 
 class Application {
-  constructor ({ config, server, logger, eventBus, schemasLoader, eventHandlers }) {
+  constructor ({ config, server, logger }) {
     this.server = server
     this.logger = logger
     this.config = config

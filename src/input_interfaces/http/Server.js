@@ -7,6 +7,11 @@ const onHealthCheck = () => {
   return Promise.resolve()
 }
 
+const onSignal = ({ logger }) => () => {
+  logger.info('server is starting cleanup')
+  return Promise.resolve()
+}
+
 class Server {
   constructor ({ config, logger, router }) {
     this.config = config
@@ -19,10 +24,11 @@ class Server {
     this.server = terminus(http.createServer(this.app), {
       timeout: config.server.timeout,
       signal: 'SIGINT',
+      onSignal: onSignal({ logger }),
 
       healthChecks: {
-        '/_health/liveness': onHealthCheck(),
-        '/_health/readiness': onHealthCheck()
+        '/_health/liveness': onHealthCheck,
+        '/_health/readiness': onHealthCheck
       },
       logger: this.logger.info
     })
@@ -43,6 +49,7 @@ class Server {
 }
 
 module.exports = Server
+
 module.exports[RESOLVER] = {
   name: 'server',
   lifetime: Lifetime.SINGLETON
