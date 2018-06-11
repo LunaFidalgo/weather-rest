@@ -3,14 +3,25 @@ const { RESOLVER, Lifetime } = require('awilix')
 const Operation = require('../Operation')
 
 class GetWeather extends Operation {
-  constructor ({ logger, config }) {
+  constructor ({ weatherRepository }) {
     super()
 
-    this.logger = logger
-    this.config = config
+    this.repo = weatherRepository
   }
 
+  async execute () {
+    const { SUCCESS, ERROR } = this.outputs
+
+    try {
+      const data = await this.repo.getInfoWeather()
+      this.emit(SUCCESS, data)
+    } catch (err) {
+      this.emit(ERROR, err)
+    }
+  }
 }
+
+GetWeather.setOutputs(['SUCCESS', 'ERROR'])
 
 module.exports = GetWeather
 
