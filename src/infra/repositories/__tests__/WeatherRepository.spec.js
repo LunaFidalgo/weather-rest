@@ -13,5 +13,10 @@ describe('Weather repository', () => {
       const weather = repo.getWeatherInfo()
       expect(weather).toMatchSnapshot()
     })
+
+    test('Returned value', async () => {
+      const resp = repo.getWeatherInfo()
+      expect(resp).toBeDefined()
+    })
   })
 })
