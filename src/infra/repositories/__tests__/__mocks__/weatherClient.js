@@ -5,3 +5,5 @@ const weatherClient = {
     return mockData.mockResponseMadrid()
   }
 }
+
+module.exports = weatherClient
